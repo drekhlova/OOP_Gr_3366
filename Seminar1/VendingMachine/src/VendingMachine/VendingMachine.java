@@ -6,11 +6,18 @@ import java.util.List;
 
 public class VendingMachine {
     private int volume;
+    private int temperature;
     private List<Product> products;// = new ArrayList<Product>();
     private List<String> workLog;// = new ArrayList<String>();
 
     public VendingMachine(int volume){
         this.volume = volume;
+        products = new ArrayList<Product>();
+        workLog = new ArrayList<String>();
+    }
+
+    public VendingMachine(int temperature){
+        this.temperature = temperature;
         products = new ArrayList<Product>();
         workLog = new ArrayList<String>();
     }
