@@ -15,8 +15,10 @@ public class App {
         itemMachin.addProduct(new Product("Масло", 50.0));
         itemMachin.addProduct(new Product("Хлеб", 40.0));
         itemMachin.addProduct(new Product("Снек", 20.0));
+        // напитки класса Бутылка воды
         itemMachin.addProduct(new BottleOfWater("Cola", 88.0, 500 ));
         itemMachin.addProduct(new BottleOfWater("Water", 188.0, 1500 ));
+        // напитки класса Горячий напиток
         itemMachin.addProduct(new HotDrink("Американо", 80, 150, 90));
         itemMachin.addProduct(new HotDrink("Эспрессо", 80, 60, 67));
         itemMachin.addProduct(new HotDrink("Двойной эспрессо", 80, 60, 67));
@@ -27,5 +29,9 @@ public class App {
         {
             System.out.println(prod.toString());
         }
+
+        System.out.println("\n");
+        //всопроизведение заложенной в программу логики
+        System.out.println(itemMachin.getProdByName("Американо"));
     }
 }
