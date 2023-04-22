@@ -32,7 +32,7 @@ public class App {
        market.acceptToMarket(item6);
        item6.getActor().returnOrder();
        market.update();
-       
+
        market.acceptToMarket(item6);
        item6.getActor().returnOrder();
     }
