@@ -1,8 +1,11 @@
 package Classes;
 
-import Interfaces.iActorBehaviour;
+//Абстрактный класс Actor для всех клиентов
 
-public abstract class Actor implements iActorBehaviour {
+import Interfaces.iActorBehaviour;
+import Interfaces.iReturnOrder;
+
+public abstract class Actor implements iActorBehaviour, iReturnOrder {
     protected String name;
     //получил заказ
     protected boolean isTakeOrder;
