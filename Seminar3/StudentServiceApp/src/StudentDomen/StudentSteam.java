@@ -15,22 +15,22 @@ public class StudentSteam implements Iterable<StudentGroup> {
         this.steamNumber = steamNumber;
     }
 
-    //Получаем поток студентов
+    //метод для получения значения поля studentSteam
     public List<StudentGroup> getStudentSteam() {
         return studentSteam;
     }
 
-    //Установка значения для потока студентов
+    //метод для установки значения поля studentSteam
     public void setStudentSteam(List<StudentGroup> studentSteam) {
         this.studentSteam = studentSteam;
     }
 
-    //Получаем номер потока
+    //метод для получения значения поля steamNumber
     public int getSteamNumber() {
         return steamNumber;
     }
 
-    //Установка номера потока
+    //метод для установки значения поля steamNumber
     public void setSteamNumber(int steamNumber) {
         this.steamNumber = steamNumber;
     }

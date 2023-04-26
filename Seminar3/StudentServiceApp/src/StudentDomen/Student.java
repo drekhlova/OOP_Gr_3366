@@ -10,11 +10,12 @@ public class Student extends User implements Comparable<Student> {
         this.studentID = studentID;
     }
 
-
+    //метод для получения значения поля StudentID
     public long getStudentID() {
         return studentID;
     }
 
+    //метод для установки значения поля studentID
     public void setStudentID(long studentID) {
         this.studentID = studentID;
     }

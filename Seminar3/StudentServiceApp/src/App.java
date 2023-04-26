@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import Controllers.EmployeeController;
+import Controllers.EmploeeController;
 import StudentDomen.Employee;
 import StudentDomen.Student;
 import StudentDomen.StudentGroup;
@@ -42,29 +42,27 @@ public class App {
         listStud2.add(s8);
         listStud2.add(s9);
         listStud2.add(s10);
-    
+        listStud2.add(s11);
+
         //Третья группа студентов
         List<Student> listStud3 = new ArrayList<Student>();
-        listStud2.add(s11);
         listStud3.add(s12);
         listStud3.add(s13);
         listStud3.add(s14);
 
-
+      
         StudentGroup group = new StudentGroup(listStud1, 1, 6);
-
         for(Student stud : group) {
             System.out.println(stud);
         }
 
         System.out.println("============= После сортировки =============");
         Collections.sort(group.getStudents());
-
-
         for(Student stud : group) {
             System.out.println(stud);
         }
         
+        //построчный вывод на экран созданных персонажей
         System.out.println(u1);
         System.out.println(s1);
         System.out.println(group);
@@ -93,8 +91,6 @@ public class App {
         //Emploee person1 = new Employee("Иван", "Иванов", 55, 110) 
         //EmployeeController contrEmp = new EmployeeController();
         //contrEmp.paySalary(person1);
-
-    
     }
 }
 

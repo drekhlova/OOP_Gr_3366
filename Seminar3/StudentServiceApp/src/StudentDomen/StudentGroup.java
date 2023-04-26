@@ -16,30 +16,31 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
         this.groupSize = groupSize;
     }
 
-    //Получаем список студентов
+    //метод для получени значения поля Students
     public List<Student> getStudents() {
         return students;
     }
 
-    //Устанавливается значение для списка студентов
+    //метод для установки значения поля Students
     public void setStudents(List<Student> students) {
         this.students = students;
     }
 
-    //Получаем groupID
+    //метод для получени значения поля groupID
     public long getGroupId() {
         return groupID;
     }
-    //Устанавливается значение groupID
+
+    //метод для установки значения поля groupID
     public void setGroupId(long groupID) {
         this.groupID = groupID;
     }
 
-    //Получаем groupSize
+    //метод для получени значения поля groupSize
     public int getGroupSize() {
         return groupSize;
     }
-    //Устанавливается значение groupSize
+    //метод для установки значения поля groupSize
     public void setGroupSize(int groupSize) {
         this.groupSize = groupSize;
     }
@@ -50,7 +51,7 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
         return new StudentGroupIterator(students);
     }
 
-    //На экран
+    //Выводим на экран
     @Override
     public String toString() {
         return "StudentGroup{" 
