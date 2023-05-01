@@ -1,13 +1,17 @@
 import java.net.NoRouteToHostException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 import Controllers.EmploeeController;
+import Controllers.TeacherController;
+import StudentDomen.AverageAge;
 import StudentDomen.Emploee;
 import StudentDomen.Student;
 import StudentDomen.StudentGroup;
+import StudentDomen.Teacher;
 import StudentDomen.User;
 
 public class App {
@@ -89,18 +93,41 @@ public class App {
         //    System.out.println(groupsOfSteam);
         //}
 
-        Emploee peron1 = new Emploee("Иванов", "Олег", 55, 110);
-        Student s1 = new Student("Сергей", "Иванов", 22, (long)101);
+        //Emploee peron1 = new Emploee("Иванов", "Олег", 55, 110);
+        //Student s1 = new Student("Сергей", "Иванов", 22, (long)101);
 
         //EmploeeController contrEmp = new EmploeeController();
-        EmploeeController.paySalary(peron1);
+        //EmploeeController.paySalary(peron1);
         //contrEmp.paySalary(s1);
 
-        Integer studHour[] = {124,234,231,1,45};
-        System.out.println(EmploeeController.mean(studHour));
+        //Integer studHour[] = {124,234,231,1,45};
+        //System.out.println(EmploeeController.mean(studHour));
 
-        Double emplSalary[] = {12555.23,34213.5,10000.0};
-        System.out.println(EmploeeController.mean(emplSalary));
+        //Double emplSalary[] = {12555.23,34213.5,10000.0};
+        //System.out.println(EmploeeController.mean(emplSalary));
+    
+    {
+        //Создаем список студентов
+        List<StudentDomen.Student> students = new ArrayList<>();
+        students.add(new StudentDomen.Student("Иван", "Иванов", 25, 100));
+        students.add(new StudentDomen.Student("Николай", "Петров", 22, 205));
+        students.add(new StudentDomen.Student("Наталья", "Касаткина", 21, 306));
+        //List<Student> students = Arrays.asList(
+        //        new Student("Иван", "Иванов", 25, 100),
+        //        new Student("Николай", "Петров", 22, 205),
+        //        new Student("Наталья", "Касаткина", 21, 306)
+        //);
+        AverageAge<Student> studentAge = new AverageAge<>(students);
+        System.out.println(studentAge); //Средний возраст 22,66...
+        
+        //Создаем список преподавателей
+        List<StudentDomen.Teacher> teachers = new ArrayList<>();
+        teachers.add(new StudentDomen.Teacher("Варвара", "Цветаева", 38, 10, "к.п.н."));
+        teachers.add(new StudentDomen.Teacher("Сергей", "Михайлов", 55, 07, "д.э.н."));
+        teachers.add(new StudentDomen.Teacher("Арсений", "Валентинов", 42, 15, "д.ю.н."));
+        AverageAge<StudentDomen.Teacher> teacherAge = new AverageAge<>(teachers);
+        System.out.println(teacherAge); //Средний возраст 45
     }
+}
 }
 

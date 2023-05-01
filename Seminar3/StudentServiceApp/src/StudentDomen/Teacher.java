@@ -13,13 +13,13 @@ public class Teacher extends User {
         this.academicDegree = academicDegree;
     }
 
-    //Метод для получения значение поля TeacerId
-    public int getTeacerId() {
+    //Метод для получения значение поля TeacherId
+    public int getTeacherId() {
         return teacherId;
     }
 
-    //Метод для установления значение поля TeacerId
-    public void setTeacerId(int teacerId) {
+    //Метод для установления значение поля TeacherId
+    public void setTeacherId(int teacerId) {
         this.teacherId = teacerId;
     }
 
