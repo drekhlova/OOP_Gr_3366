@@ -17,7 +17,7 @@ public class StudentService implements iUserService<Student> {
     }
 
     @Override
-    public void create(String firstName, String secondName, int age) {
+    public void create(String firstName, String secondName, int age, String academicDegree) {
         Student per = new Student(firstName, secondName, age, count);
         count++;
         students.add(per);

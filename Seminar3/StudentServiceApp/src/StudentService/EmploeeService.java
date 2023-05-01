@@ -14,7 +14,7 @@ public class EmploeeService implements iUserService<Emploee> {
     }
 
     @Override
-    public void create(String firstName, String secondName, int age) {
+    public void create(String firstName, String secondName, int age, String academicDegree) {
        Emploee per = new Emploee(firstName, secondName, age, count);
        count++;
        emploees.add(per);

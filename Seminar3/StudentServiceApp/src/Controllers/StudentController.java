@@ -10,8 +10,8 @@ public class StudentController implements iUserController<Student> {
     private final StudentGroupService groupService = new StudentGroupService();
 
     @Override
-    public void create(String firstName, String secondName, int age) {
-        dataService.create(firstName, secondName, age);
+    public void create(String firstName, String secondName, int age, String academicDegree) {
+        dataService.create(firstName, secondName, age, academicDegree);
     }
 
     

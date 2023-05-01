@@ -2,7 +2,6 @@ package StudentService;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Comparator;
 
 import StudentDomen.Teacher;
 import StudentDomen.UserComparator;
@@ -18,8 +17,7 @@ public class TeacherService implements iUserService<Teacher> {
     public void create(String firstName, String secondName, int age, String academicDegree) {
         Teacher per = new Teacher(firstName, secondName, age, count, academicDegree);
         count++;
-        teachers.add(per);
-        
+       teachers.add(per);  
     }
 
     @Override
