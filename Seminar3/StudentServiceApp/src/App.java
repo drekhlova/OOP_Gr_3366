@@ -112,22 +112,23 @@ public class App {
         students.add(new StudentDomen.Student("Иван", "Иванов", 25, 100));
         students.add(new StudentDomen.Student("Николай", "Петров", 22, 205));
         students.add(new StudentDomen.Student("Наталья", "Касаткина", 21, 306));
-        //List<Student> students = Arrays.asList(
-        //        new Student("Иван", "Иванов", 25, 100),
-        //        new Student("Николай", "Петров", 22, 205),
-        //        new Student("Наталья", "Касаткина", 21, 306)
-        //);
-        AverageAge<Student> studentAge = new AverageAge<>(students);
-        System.out.println(studentAge); //Средний возраст 22,66...
+        AverageAge<Student> findStudAge = new AverageAge<>(students);
+        System.out.println(findStudAge); //Средний возраст 22.66...
         
         //Создаем список преподавателей
         List<StudentDomen.Teacher> teachers = new ArrayList<>();
         teachers.add(new StudentDomen.Teacher("Варвара", "Цветаева", 38, 10, "к.п.н."));
         teachers.add(new StudentDomen.Teacher("Сергей", "Михайлов", 55, 07, "д.э.н."));
         teachers.add(new StudentDomen.Teacher("Арсений", "Валентинов", 42, 15, "д.ю.н."));
-        AverageAge<StudentDomen.Teacher> teacherAge = new AverageAge<>(teachers);
-        System.out.println(teacherAge); //Средний возраст 45
-    }
-}
+        AverageAge<Teacher> findTeachAge = new AverageAge<>(teachers);
+        System.out.println(findTeachAge); //Средний возраст 45
+
+        //Создаем список работников
+        List<StudentDomen.Emploee> emploees = new ArrayList<>();
+        emploees.add(new StudentDomen.Emploee("Тимофей", "Кораблев", 62, 501));
+        emploees.add(new StudentDomen.Emploee("Андрей", "Петрушкин", 57, 505));
+        AverageAge<Emploee> findEmpAge = new AverageAge<>(emploees);
+        System.out.println(findEmpAge); //Средний возраст 59.5
+    } }
 }
 
