@@ -46,11 +46,32 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
     }
 
     //Итератор
+    //@Override
+    //public Iterator<Student> iterator() {
+    //    return new StudentGroupIterator(students);
+    //}
+
     @Override
     public Iterator<Student> iterator() {
-        return new StudentGroupIterator(students);
-    }
+        return new Iterator<Student>(){
+            private int index = 0;
+            @Override
+            public boolean hasNext() {
+               return index<students.size();
+            }
+            @Override
+            public Student next() {
+                if(!hasNext())
+                {
+                    return null;
+                }
+                //counter++;
+                return students.get(index++);        
+            }
 
+        };
+    }
+    
     //Выводим на экран
     @Override
     public String toString() {

@@ -2,6 +2,7 @@ package StudentService;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import StudentDomen.Student;
 
 public class StudentService implements iUserService<Student> {
@@ -21,5 +22,4 @@ public class StudentService implements iUserService<Student> {
         count++;
         students.add(per);
     }
-
 }

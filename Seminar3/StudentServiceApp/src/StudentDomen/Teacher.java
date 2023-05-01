@@ -13,40 +13,24 @@ public class Teacher extends User {
         this.academicDegree = academicDegree;
     }
 
-    //метод для получения значения поля аge
-    @Override
-    public int getAge() {
-        return super.getAge();
+    //Метод для получения значение поля TeacerId
+    public int getTeacerId() {
+        return teacherId;
     }
 
-    //метод для получения значения поля FirstName
-    @Override
-    public String getFirstName() {
-        return super.getFirstName();
+    //Метод для установления значение поля TeacerId
+    public void setTeacerId(int teacerId) {
+        this.teacherId = teacerId;
     }
 
-    //метод для получения значения поля SecondName
-    @Override
-    public String getSecondName() {
-        return super.getSecondName();
+    //Метод для получения значение поля Level
+    public String getLevel() {
+        return academicDegree;
     }
 
-    //метод для установки значения поля age
-    @Override
-    public void setAge(int age) {
-        super.setAge(age);
-    }
-
-    //метод для установки значения поля firstName
-    @Override
-    public void setFirstName(String firstName) {
-        super.setFirstName(firstName);
-    }
-
-    //метод для установки значения поля secondName
-    @Override
-    public void setSecondName(String secondName) {
-        super.setSecondName(secondName);
+    //Метод для установления значение поля Level
+    public void setLevel(String academicDegree) {
+        this.academicDegree = academicDegree;
     }
     
 }

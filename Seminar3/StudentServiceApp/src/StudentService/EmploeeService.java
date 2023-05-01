@@ -3,31 +3,31 @@ package StudentService;
 import java.util.ArrayList;
 import java.util.List;
 
-import StudentDomen.Employee;
+import StudentDomen.Emploee;
 import StudentDomen.UserComparator;
 
-public class EmploeeService implements iUserService<Employee> {
+public class EmploeeService implements iUserService<Emploee> {
     private int count;
-    private List<Employee> employees;
+    private List<Emploee> emploees;
     public EmploeeService() {
-        this.employees = new ArrayList<Employee>();
-    }
-
-    @Override
-    public List<Employee> getAll() {
-        return null;
+        this.emploees = new ArrayList<Emploee>();
     }
 
     @Override
     public void create(String firstName, String secondName, int age) {
-        Employee per = new Employee(firstName, secondName, age, count);
-        count++;
-        employees.add(per);
+       Emploee per = new Emploee(firstName, secondName, age, count);
+       count++;
+       emploees.add(per);
     }
-    
-    public List<Employee> getSoredByFIOStudentGroup(int numberGroup) {
-        List<Employee> students = new ArrayList<>(employees);
-        emps.sort(new UserComparator<Employee>());
+
+    @Override
+    public List<Emploee> getAll() {
+        return emploees;
+    }
+
+    public List<Emploee> getSortedByFIOStudentGroup(int numberGroup) {
+        List<Emploee> emps = new ArrayList<>(emploees);
+        emps.sort(new UserComparator<Emploee>());
         return emps;
     }
 }

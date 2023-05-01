@@ -1,6 +1,7 @@
 package Controllers;
 
-import StudentDomen.Employee;
+import StudentDomen.Emploee;
+import StudentDomen.User;
 import StudentService.EmploeeService;
 
 public class EmploeeController implements iUserController<Emploee> {
