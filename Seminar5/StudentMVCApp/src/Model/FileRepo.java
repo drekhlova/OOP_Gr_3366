@@ -72,4 +72,9 @@ public class FileRepo implements iGetModel {
         readAllStudentsFromFile();
         return students;    
     }
+
+    @Override
+    public boolean deleteStudent(Long id) {
+        return false;
+    }
 }

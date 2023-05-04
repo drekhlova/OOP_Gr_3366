@@ -36,13 +36,9 @@ public class App {
     //    fileRepo.saveAllStudentToFile();
 
 
-       iGetModel model = new Model(students);
+       //iGetModel model = new Model(students);
+       iGetModel model = new Model();
        iGetModel modelFileRepo = fileRepo;
-
-       
-
-
-
 
        iGetView view = new View();
        Controller control = new Controller(view, modelFileRepo);
