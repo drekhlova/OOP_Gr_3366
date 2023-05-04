@@ -9,6 +9,7 @@ import Model.Model;
 
 import Model.Student;
 import View.View;
+import View.ViewEng;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -28,21 +29,20 @@ public class App {
        students.add(s6);
 
        
-       FileRepo fileRepo = new FileRepo("StudentDb.txt");
-    //    for(Student pers :students)
-    //    {
-    //     fileRepo.addStudent(pers);
-    //    }
-    //    fileRepo.saveAllStudentToFile();
+      FileRepo fileRepo = new FileRepo("StudentDb.txt");
+      //for(Student pers :students){
+      //   fileRepo.addStudent(pers);
+      //}
+      //fileRepo.saveAllStudentToFile();
 
+      iGetModel model = new Model(students);
+      iGetModel modelFileRepo = fileRepo;
 
-       //iGetModel model = new Model(students);
-       iGetModel model = new Model();
-       iGetModel modelFileRepo = fileRepo;
-
-       iGetView view = new View();
-       Controller control = new Controller(view, modelFileRepo);
-       control.run();
+      //iGetView view = new View();
+      iGetView view = new ViewEng();
+      //Controller control = new Controller(view, modelFileRepo);
+      Controller control = new Controller(view, model);
+      control.run();
       // control.updateView();
        
     }

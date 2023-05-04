@@ -9,10 +9,13 @@ import java.util.List;
 
 import Controller.iGetModel;
 
+//Класс FileRepo
+
 public class FileRepo implements iGetModel {
     private String fileName;
     private List<Student> students;
 
+    //Конструктор класса инициализирует список студентов и создает файл
     public FileRepo(String fileName) {
         this.fileName = fileName;
         this.students = new ArrayList<>();
@@ -24,11 +27,13 @@ public class FileRepo implements iGetModel {
         }
     }
 
+    //Добавление студента в список
     public void addStudent(Student student)
     {
         this.students.add(student);
     }
 
+    //Чтение студентов из файла и добавление их в список
     public void readAllStudentsFromFile()
     {
         try
@@ -52,6 +57,7 @@ public class FileRepo implements iGetModel {
         }
     }
 
+    //Запись студентов в файл
     public void saveAllStudentToFile()
     {
         try(FileWriter fw = new FileWriter(fileName, true))
@@ -67,12 +73,14 @@ public class FileRepo implements iGetModel {
         }
     }
 
+    //Получение всех студентов из модели
     @Override
     public List<Student> getAllStudent() {
         readAllStudentsFromFile();
         return students;    
     }
 
+    //Удаление студента по id
     @Override
     public boolean deleteStudent(Long id) {
         return false;

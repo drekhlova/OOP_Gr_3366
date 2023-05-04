@@ -10,13 +10,15 @@ import Model.Student;
 import Model.Model;
 import View.View;
 
+//Класс Controller
 
 public class Controller {
 
     private List<Student> students; 
-    private iGetView view;
-    private iGetModel model;
+    private iGetView view; //Подключение view
+    private iGetModel model; //Подключение model
 
+    //Конструктор передает контроллеру model и view и инициализирует пустой список студентов, чтобы класть туда копию данных из model
     public Controller(iGetView view, iGetModel model) {
         this.view = view;
         this.model = model;
@@ -28,6 +30,7 @@ public class Controller {
         students = model.getAllStudent();
     }
 
+    //Проверка корректности данных
     public boolean testData()
     {
         if(students.size()>0)
@@ -40,6 +43,7 @@ public class Controller {
         }
     }
 
+    //Отправка данных в view
     public void updateView()
     {
         //MVP
@@ -56,6 +60,7 @@ public class Controller {
         //view.printAllStudent(model.getAllStudent());
     }
 
+    //Подключение команд
     public void run()
     {
         Commands com = Commands.NONE;
@@ -86,8 +91,6 @@ public class Controller {
                     }
                     break;
             }
-
         }
     }
-
 }
