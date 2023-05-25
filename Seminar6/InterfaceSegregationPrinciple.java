@@ -35,8 +35,6 @@ return edge * edge * edge;
 Подсказка: круг не объемная фигура и этому классу не нужен метод volume().
 */
 
-package for_HW_Java.Homework7;
-
 public class InterfaceSegregationPrinciple {
 
     //Интерфейс для двумерных фигур

@@ -19,8 +19,6 @@ return baseSalary - tax;
 
 Подсказка: вынесите метод calculateNetSalary() в отдельный класс */
 
-package for_HW_Java.Homework7;
-
 import java.util.Date;
 
 public class SingleResponsibilityPrinciple {

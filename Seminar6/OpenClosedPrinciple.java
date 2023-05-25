@@ -27,8 +27,6 @@ return this.type;
 
 Подсказка: создайте два дополнительных класса Car и Bus(наследников Vehicle), напишите метод calculateAllowedSpeed(). Использование этого метода позволит сделать класс SpeedCalculation соответствующим OCP */
 
-package for_HW_Java.Homework7;
-
 public class OpenClosedPrinciple {
 
     //Абстрактный класс Vehicle - транспортное средство
