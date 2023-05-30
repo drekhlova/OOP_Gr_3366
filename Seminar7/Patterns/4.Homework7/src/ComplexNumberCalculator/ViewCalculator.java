@@ -16,15 +16,15 @@ public class ViewCalculator {
             ComplexNumber primaryArg = promptComplexNumber("Введите первый аргумент: ");
             iCalculable calculator = calculableFactory.create(primaryArg);
             while (true) {
-                String cmd = prompt("Введите команду (*, +, /, =) : ");
-                if (cmd.equals("*")) {
-                    ComplexNumber arg = promptComplexNumber("Введите второй аргумент: ");
-                    calculator.multi(arg);
-                    continue;
-                }
+                String cmd = prompt("Введите команду (+, *, /, =) : ");
                 if (cmd.equals("+")) {
                     ComplexNumber arg = promptComplexNumber("Введите второй аргумент: ");
                     calculator.sum(arg);
+                    continue;
+                }
+                if (cmd.equals("*")) {
+                    ComplexNumber arg = promptComplexNumber("Введите второй аргумент: ");
+                    calculator.multi(arg);
                     continue;
                 }
                 if (cmd.equals("/")) {
@@ -58,9 +58,9 @@ public class ViewCalculator {
         Scanner in = new Scanner(System.in);
         System.out.print(message);
         System.out.println("\nВведите действительную часть: ");
-        double real = Float.parseFloat(in.nextLine());
+        double a = Float.parseFloat(in.nextLine());
         System.out.println("Введите мнимую часть: ");
-        double imaginary = Float.parseFloat(in.nextLine());
-        return new ComplexNumber(real, imaginary);
+        double b = Float.parseFloat(in.nextLine());
+        return new ComplexNumber(a, b);
     }
 }

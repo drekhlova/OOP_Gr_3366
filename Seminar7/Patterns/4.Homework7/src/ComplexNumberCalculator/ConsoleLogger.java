@@ -1,12 +1,10 @@
 package ComplexNumberCalculator;
 
-import java.time.LocalDateTime;
+//Класс ConsoleLogger для вывода логов в консоль
+public class ConsoleLogger implements iLoggable {
 
-public class ConsoleLogger implements Loggable{
-    @Override
-    public void log(String msg) {
-        LocalDateTime now = LocalDateTime.now();
-        System.out.printf("LOG [%s]: %s \n", now, msg);
-    } 
-    
-}
+        @Override
+        public void log(String message) {
+            System.out.println("LOG:" + message);
+        }
+    }

@@ -1,34 +1,43 @@
 package ComplexNumberCalculator;
 
-public class ComplexCalculator implements ComplexCalculable {
-    private ComplexNumberCalculator primaryArg;
+//Класс ComplexCalculator
+public final class ComplexCalculator implements iCalculable {
+    private ComplexNumber primaryArg;
 
-    public ComplexCalculator(ComplexNumberCalculator primaryArg) {
+    //Конструктор класса принимает параметром первый аргемент primaryArg для вычисления
+    public ComplexCalculator(ComplexNumber primaryArg) {
         this.primaryArg = primaryArg;
     }
 
-    public ComplexCalculator sum(ComplexNumberCalculator secondaryArg) {
-        primaryArg = new ComplexNumberCalculator(primaryArg.getA() + secondaryArg.getA(), primaryArg.getB() + secondaryArg.getB());
+    @Override
+    public iCalculable sum(ComplexNumber arg) {
+        primaryArg.a += arg.a;
+        primaryArg.b += arg.b;
         return this;
     }
 
-    public ComplexCalculator mul(ComplexNumberCalculator secondaryArg) {
-        double a = primaryArg.getA() * secondaryArg.getA() - primaryArg.getB() * secondaryArg.getB();
-        double b = primaryArg.getA() * secondaryArg.getB() + primaryArg.getB() * secondaryArg.getA();
-        primaryArg = new ComplexNumberCalculator(a, b);
+    @Override
+    public iCalculable multi(ComplexNumber arg) {
+        ComplexNumber resultMultiply = new ComplexNumber(0, 0);
+        resultMultiply.a = primaryArg.a * arg.a - primaryArg.b * arg.b;
+        resultMultiply.b = primaryArg.a * arg.b + primaryArg.b * arg.a;
+        primaryArg.a = resultMultiply.a;
+        primaryArg.b = resultMultiply.b;
         return this;
     }
 
-    public ComplexCalculator div(ComplexNumberCalculator secondaryArg) {
-        double a = primaryArg.getA();
-        double b = primaryArg.getB();
-        double c = secondaryArg.getA();
-        double d = secondaryArg.getB();
-        primaryArg = new ComplexNumberCalculator((a * c + b * d) / (c * c + d * d), (b * c - a * d) / (c * c + d * d));
+    @Override
+    public iCalculable divide(ComplexNumber arg) {
+        ComplexNumber resultMultiply = new ComplexNumber(0, 0);
+        resultMultiply.a = (primaryArg.a * arg.a + primaryArg.b * arg.b) / (arg.a * arg.b + arg.b * arg.b);
+        resultMultiply.b = (primaryArg.b * arg.a - primaryArg.a * arg.b) / (arg.a * arg.a + arg.b * arg.b);
+        primaryArg.a = Math.round(resultMultiply.a * 100.0) / 100.0;
+        primaryArg.b = Math.round(resultMultiply.b * 100.0) / 100.0;
         return this;
     }
 
-    public ComplexNumberCalculator getResult(){
+    @Override
+    public ComplexNumber getResult() {
         return primaryArg;
     }
 }

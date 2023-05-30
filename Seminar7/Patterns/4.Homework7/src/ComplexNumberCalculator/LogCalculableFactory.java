@@ -1,19 +1,15 @@
 package ComplexNumberCalculator;
 
+// Класс LogCalculableFactory, содержащий логгеры
 public class LogCalculableFactory implements iCalculableFactory {
-    private CalculableFactory primaryFactory;
-    private Loggable logger;
+    private iLoggable logger;
 
-    public LogCalculableFactory(CalculableFactory primaryFactory, Loggable logger){
-        this.primaryFactory = primaryFactory;
+    public LogCalculableFactory(iLoggable logger) {
         this.logger = logger;
     }
 
-    public LogCalculableFactory(iCalculableFactory factory, Loggable logger2) {
-    }
-
     @Override
-    public ComplexCalculable create(ComplexNumberCalculator primaryArg) {
-        return new LogComplexCalculator(primaryFactory.create(primaryArg), logger);
+    public iCalculable create(ComplexNumber primaryArg) {
+        return new LogCalculator(new ComplexCalculator(primaryArg), logger);
     }
 }

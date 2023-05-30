@@ -1,6 +1,6 @@
 package ComplexNumberCalculator;
 
+// Интерфейс для описания поведения ComplexCalculableFactory
 public interface iCalculableFactory {
-    ComplexCalculable create(ComplexNumberCalculator primaryArg);
+    iCalculable create(ComplexNumber primaryArg);
 }
-
